@@ -40,6 +40,9 @@ const Home = () => {
 
     return (
         <>
+            <div className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center hover:animate-expand [&:not(:hover)]:animate-collapse">
+                Contact Me
+            </div>
             <div className="p-8 animate-fadeInLeft">
                 <div className="hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-600">
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
