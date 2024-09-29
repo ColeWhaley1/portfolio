@@ -40,6 +40,10 @@ export default {
           }
         },
         expand: {
+          '0%': {
+            height: 'var(--contact-height)',
+            width: 'var(--contact-width)',
+          },
           '100%': {
             height: '200px',
             width: '400px'
@@ -47,8 +51,8 @@ export default {
         },
         collapse: {
           '0%': {
-            height: '200px',
-            width: '400px',
+            height: 'var(--contact-height)',
+            width: 'var(--contact-width)',
           },
           '100%': {
             height: '40px',

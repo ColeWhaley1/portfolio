@@ -6,6 +6,7 @@ import DownloadDarkIcon from "../assets/download_dark.svg";
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(true);
+    const [isHoveringContact, setIsHoveringContact] = useState(false);
 
     const toggleDarkMode = () => {
         const lightIcon = document.getElementById("light-icon");
@@ -38,9 +39,40 @@ const Home = () => {
         }
     }, []);
 
+    const handleContactEnter = () => {
+        setIsHoveringContact(true);
+        const div = document.getElementById("contactMe");
+        const width = div!.offsetWidth;
+        const height = div!.offsetHeight;
+
+        div!.style.setProperty('--contact-width', `${width}px`);
+        div!.style.setProperty('--contact-height', `${height}px`);
+
+        div!.classList.remove("animate-collapse");
+        div!.classList.add("animate-expand");
+    };
+
+    const handleContactLeave = () => {
+        setIsHoveringContact(true);
+        const div = document.getElementById("contactMe");
+
+        const width = div!.offsetWidth;
+        const height = div!.offsetHeight;
+
+        div!.style.setProperty('--contact-width', `${width}px`);
+        div!.style.setProperty('--contact-height', `${height}px`);
+        
+        div!.classList.remove("animate-expand");
+        div!.classList.add("animate-collapse");
+    };
+
     return (
         <>
-            <div className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center hover:animate-expand [&:not(:hover)]:animate-collapse">
+            <div 
+            id="contactMe" 
+            onMouseEnter={handleContactEnter}
+            onMouseLeave={handleContactLeave}
+            className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center">
                 Contact Me
             </div>
             <div className="p-8 animate-fadeInLeft">
