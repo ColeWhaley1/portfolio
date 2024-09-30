@@ -5,6 +5,9 @@ import DownloadLightIcon from "../assets/download_light.svg";
 import DownloadDarkIcon from "../assets/download_dark.svg";
 import GitLightIcon from "../assets/git_light.png";
 import GitDarkIcon from "../assets/git_dark.png";
+import LinkedInIcon from "../assets/linkedin.png";
+import CopyLight from "../assets/copy_light.png";
+import CheckLight from "../assets/check_light.png";
 
 
 const Home = () => {
@@ -82,6 +85,15 @@ const Home = () => {
         setIsContactExpanded(false);
     };
 
+    const copyToClipboard = (str: string, id: string): void => {
+        navigator.clipboard.writeText(str);
+        const icon: HTMLImageElement | HTMLElement | null = document.getElementById(id);
+        
+        if(icon && icon instanceof HTMLImageElement){
+            icon.src = CheckLight;
+        }
+    };
+
     function ContactMeTitle() {
         return <h1>Contact Me</h1>
     }
@@ -89,12 +101,24 @@ const Home = () => {
     function ContactMeInfo() {
         return (
         <div className="text-center">
-            <p>
-                (252)-571-6524
+            <div className="relative w-10 h-10 mx-auto hover:scale-105 pb-12">
+                <a 
+                href="https://www.linkedin.com/in/cole-whaley-93b2b01b1/"
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <img src={LinkedInIcon}/>
+                </a>
+            </div>
+            <div className="flex space-x-2 justify-center">
+                <p className="font-bold">
+                    colewhaley1@gmail.com 
+                </p>
+                <div className="h-5 w-5 hover:scale-105" onClick={() => copyToClipboard("colewhaley1@gmail.com", "copyEmail")}><img id="copyEmail" src={CopyLight} alt="copy to clipboard"/></div>
+            </div>
+            <p className="font-bold">
+                (252)-571-6524 
             </p>
-            <p>
-                colewhaley1@gmail.com
-            </p>
+
         </div>
         )
     }
