@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -46,7 +48,7 @@ export default {
           },
           '100%': {
             height: '200px',
-            width: '400px'
+            width: '400px',
           }
         },
         collapse: {
@@ -58,6 +60,14 @@ export default {
             height: '40px',
             width: '160px',
           }
+        },
+        textExpand: {
+          '0%': {
+            transform: 'scale(.2)'
+          },
+          '100%': {
+            transform: 'scale(1)'
+          },
         }
       },
       animation: {
@@ -66,6 +76,7 @@ export default {
         fadeInUp: 'fadeInUp .5s forwards',
         expand: 'expand .3s ease-out forwards',
         collapse: 'collapse .3s ease-out backwards',
+        textExpand: 'textExpand .5s'
       },
     },
   },

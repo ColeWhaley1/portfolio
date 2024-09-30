@@ -3,10 +3,13 @@ import DarkModeIcon from "../assets/dark_mode.svg";
 import LightModeIcon from "../assets/light_mode.svg";
 import DownloadLightIcon from "../assets/download_light.svg";
 import DownloadDarkIcon from "../assets/download_dark.svg";
+import GitLightIcon from "../assets/git_light.png";
+import GitDarkIcon from "../assets/git_dark.png";
+
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(true);
-    const [isHoveringContact, setIsHoveringContact] = useState(false);
+    const [isContactExpanded, setIsContactExpanded] = useState(false);
 
     const toggleDarkMode = () => {
         const lightIcon = document.getElementById("light-icon");
@@ -40,8 +43,9 @@ const Home = () => {
     }, []);
 
     const handleContactEnter = () => {
-        setIsHoveringContact(true);
+
         const div = document.getElementById("contactMe");
+
         const width = div!.offsetWidth;
         const height = div!.offsetHeight;
 
@@ -50,10 +54,16 @@ const Home = () => {
 
         div!.classList.remove("animate-collapse");
         div!.classList.add("animate-expand");
+
+        setIsContactExpanded(true);
+
+        // animate expand text
+        const contactTextDiv = document.getElementById("contactMeText");
+        contactTextDiv?.classList.add("animate-textExpand");
     };
 
     const handleContactLeave = () => {
-        setIsHoveringContact(true);
+
         const div = document.getElementById("contactMe");
 
         const width = div!.offsetWidth;
@@ -61,10 +71,44 @@ const Home = () => {
 
         div!.style.setProperty('--contact-width', `${width}px`);
         div!.style.setProperty('--contact-height', `${height}px`);
-        
+
         div!.classList.remove("animate-expand");
         div!.classList.add("animate-collapse");
+
+        // remove expand animation
+        const contactTextDiv = document.getElementById("contactMeText");
+        contactTextDiv?.classList.remove("animate-textExpand");
+
+        setIsContactExpanded(false);
     };
+
+    function ContactMeTitle() {
+        return <h1>Contact Me</h1>
+    }
+
+    function ContactMeInfo() {
+        return (
+        <div className="text-center">
+            <p>
+                (252)-571-6524
+            </p>
+            <p>
+                colewhaley1@gmail.com
+            </p>
+        </div>
+        )
+    }
+
+    function ContactMeMessage() {
+        const div = document.getElementById("contactMe");
+
+        // upon page load, default to ContactMeTitle
+        if(!div){
+            return <ContactMeTitle />
+        }
+
+        return isContactExpanded ? <ContactMeInfo /> : <ContactMeTitle />;
+    }
 
     return (
         <>
@@ -73,7 +117,9 @@ const Home = () => {
             onMouseEnter={handleContactEnter}
             onMouseLeave={handleContactLeave}
             className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center">
-                Contact Me
+                <div id="contactMeText">
+                    <ContactMeMessage/>
+                </div>
             </div>
             <div className="p-8 animate-fadeInLeft">
                 <div className="hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-600">
@@ -114,25 +160,36 @@ const Home = () => {
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h1>
             </div>
 
-            <button
-                onClick={toggleDarkMode}
-                className="fixed top-4 right-4 px-4 py-2 text-gray-900 rounded-full dark:text-white">
-                <div className="relative w-10 h-10 hover:scale-105">
+            <div className="fixed top-6 right-6 flex space-x-8">
+                <a 
+                    href="https://github.com/ColeWhaley1"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:scale-105">
+                    <div className="relative w-10 h-10">
+                        {darkMode ? <img src={GitLightIcon} className="h-10 w-10"/> : <img src={GitDarkIcon} className="h-10 w-10"/>}
+                    </div>
+                </a>
+                <a
+                    href="../public/Resume-Cover-Letter.zip"
+                    download="Resume-Cover-Letter.zip"
+                    className="text-gray-900 rounded-full dark:text-white hover:scale-105">
+                    <div className="relative w-10 h-10">
+                        {darkMode ? <img src={DownloadLightIcon} className="h-10 w-10"/> : <img src={DownloadDarkIcon} className="h-10 w-10"/>}
+                    </div>
+                </a>
+                <button
+                    onClick={toggleDarkMode}
+                    className="text-gray-900 rounded-full dark:text-white">
+                    <div className="relative w-10 h-10 hover:scale-105">
 
-                    <img id="light-icon" src={LightModeIcon} className={`absolute w-10 h-10 ${darkMode ? 'animate-fadeInUp' : 'animate-fadeOutUp'}`}/>
-                    <img id="dark-icon" src={DarkModeIcon} className={`absolute w-10 h-10 ${darkMode ? 'animate-fadeOutUp' : 'animate-fadeInUp'}`} />
+                        <img id="light-icon" src={LightModeIcon} className={`absolute w-10 h-10 ${darkMode ? 'animate-fadeInUp' : 'animate-fadeOutUp'}`}/>
+                        <img id="dark-icon" src={DarkModeIcon} className={`absolute w-10 h-10 ${darkMode ? 'animate-fadeOutUp' : 'animate-fadeInUp'}`} />
 
-                </div>
-            </button>
+                    </div>
+                </button>
+            </div>
 
-            <a
-                href="../public/Resume-Cover-Letter.zip"
-                download="Resume-Cover-Letter.zip"
-                className="fixed top-4 right-20 px-4 py-2 text-gray-900 rounded-full dark:text-white hover:scale-105">
-                <div className="relative w-10 h-10">
-                    {darkMode ? <img src={DownloadLightIcon} className="h-10 w-10"/> : <img src={DownloadDarkIcon} className="h-10 w-10"/>}
-                </div>
-            </a>
         </>
     );
 };
