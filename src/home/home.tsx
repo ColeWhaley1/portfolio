@@ -8,7 +8,8 @@ import GitDarkIcon from "../assets/git_dark.png";
 import LinkedInIcon from "../assets/linkedin.png";
 import CopyLight from "../assets/copy_light.png";
 import CheckLight from "../assets/check_light.png";
-
+import Experience from "../experience/experience";
+import Skill from "./skill";
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -140,48 +141,40 @@ const Home = () => {
             id="contactMe" 
             onMouseEnter={handleContactEnter}
             onMouseLeave={handleContactLeave}
-            className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center">
+            className="fixed z-50 left-1/2 transform -translate-x-1/2 top-0 w-40 h-10 bg-red-500 rounded-b-full flex items-center justify-center shadow-md dark:shadow-slate-800">
                 <div id="contactMeText">
                     <ContactMeMessage/>
                 </div>
             </div>
             <div className="p-8 animate-fadeInLeft">
-                <div className="hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-600">
+                <div className="hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-600 shadow-md dark:shadow-slate-800">
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                         Cole Whaley
                     </h1>
                 </div>
                 <div>
-                    <h2 className="hover:scale-105 inline-block px-4 py-2 my-2 text-blue-900 bg-blue-300 rounded-full dark:bg-blue-500 dark:text-white">
+                    <h2 className="hover:scale-105 inline-block px-4 py-2 my-2 text-blue-900 bg-blue-300 rounded-full dark:bg-blue-500 dark:text-white shadow-md dark:shadow-slate-800">
                         Full-stack Software Engineer
                     </h2>
                 </div>
                 <div>
-                    <h2 className="hover:scale-105 inline-block px-4 py-2 mr-2 text-yellow-900 bg-yellow-300 rounded-full dark:bg-yellow-400 dark:text-gray-900">
+                    <Skill>
                         Typescript
-                    </h2>
-                    <h2 className="hover:scale-105 inline-block px-4 py-2 mr-2 text-yellow-900 bg-yellow-300 rounded-full dark:bg-yellow-400 dark:text-gray-900">
+                    </Skill>
+                    <Skill>
                         Javascript
-                    </h2>
-                    <h2 className="hover:scale-105 inline-block px-4 py-2 mr-2 text-yellow-900 bg-yellow-300 rounded-full dark:bg-yellow-400 dark:text-gray-900">
-                        Python
-                    </h2>
-                    <h2 className="hover:scale-105 inline-block px-4 py-2 mr-2 text-yellow-900 bg-yellow-300 rounded-full dark:bg-yellow-400 dark:text-gray-900">
+                    </Skill>
+                    <Skill>
                         SQL
-                    </h2>
+                    </Skill>
+                    <Skill>
+                        Python
+                    </Skill>
                 </div>
             </div>
 
-            <div className="p-8 animate-fadeInLeft">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Experience</h1>
-            </div>
-
-            <div className="p-8 animate-fadeInLeft">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Projects</h1>
-            </div>
-
-            <div className="p-8 animate-fadeInLeft">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h1>
+            <div className="mx-8 p-8 animate-fadeInLeft">
+                <Experience/>
             </div>
 
             <div className="fixed top-6 right-6 flex space-x-8">
