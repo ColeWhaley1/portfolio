@@ -12,7 +12,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex=0 }) => {
     const [currentIndex, setCurrentIndex] = useState(startIndex);
 
     function lockArrow(id: 'left' | 'right') {
-
+        console.log(id);
         // document.getElementById(`${id}-arrow`)?
 
     }
