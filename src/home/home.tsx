@@ -197,7 +197,7 @@ const Home = () => {
                     </div>
                 </a>
                 <a
-                    href="../public/Resume-Cover-Letter.zip"
+                    href="/portfolio/Resume-Cover-Letter.zip"
                     download="Resume-Cover-Letter.zip"
                     className="text-gray-900 rounded-full dark:text-white hover:scale-105">
                     <div className="relative w-10 h-10">
