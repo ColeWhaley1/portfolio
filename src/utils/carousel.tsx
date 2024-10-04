@@ -61,7 +61,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex=0 }) => {
         <div className="relative">
             <div className="overflow-hidden">
                 <div
-                    className="p-12 flex transition-transform duration-500"
+                    className="flex transition-transform duration-500"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {React.Children.map(children, (child, index) => (
