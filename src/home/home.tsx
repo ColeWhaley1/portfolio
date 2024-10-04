@@ -148,17 +148,16 @@ const Home = () => {
                 </div>
             </div>
             <div className="p-8 animate-fadeInLeft">
-                    <div className="flex gap-4 items-baseline">
+                    <div className="flex gap-4 items-baseline my-2">
                         <h1 className="text-2xl font-bold text-gray-900 dark:text-white hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-600 shadow-md dark:shadow-slate-800">
                             Cole Whaley
                         </h1>
                         <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300 hover:scale-105 inline-block px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-700 shadow-md">
                             <div className="flex gap-2 items-baseline">
-                                <img src={LocationIcon} alt="Location icon (pin drop)" className="items-baseline"/>
-                                Chapel Hill, NC
+                                <img src={LocationIcon} alt="Location icon (pin drop)" className="transform translate-y-1"/>
+                                <div>Chapel Hill, NC</div>
                             </div>
                         </h2>
-
                     </div>
 
                 <div>
