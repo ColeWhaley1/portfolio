@@ -9,7 +9,7 @@ const Experience = () => {
         <div className="m-5 p-10 mx-auto rounded-md bg-gray-200 shadow-lg dark:shadow-slate-600 dark:bg-gray-300">
             <Carousel>
                 <div>
-                    <div className="flex space-x-8 m-2">
+                    <div className="flex space-x-8 m-2 items-center">
                         <a
                             href="https://goflexie.com/"
                             target="_blank"
@@ -43,7 +43,7 @@ const Experience = () => {
                             <p className="text-gray-500 text-sm">
                                 May 2024 - Current
                             </p>
-                            <div className="rounded-md bg-gray-200 p-2 mt-4 overflow-auto max-h-36">
+                            <div className="rounded-md bg-gray-300 p-2 mt-4 overflow-auto max-h-36 dark:bg-gray-200">
                                 <ul>
                                     <li>‣ Lead an international team of developers to increase sprint velocity by 50%</li>
                                     <li>‣ Developed, refactored, and tested APIs</li>
@@ -56,12 +56,12 @@ const Experience = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="flex space-x-8 m-2">
+                    <div className="flex space-x-8 m-2 items-center">
                         <a
                             href="https://www.carolinaeasthealth.com/"
                             target="_blank"
                             rel="noopener noreferrer">
-                            <img src={CarolinaEastLogo} alt="Flexie logo" className="shadow-md h-60 w-60 rounded-md hover:scale-105" />
+                            <img src={CarolinaEastLogo} alt="Flexie logo" className="shadow-md h-60 w-60 rounded-md hover:scale-105 mt-4" />
                         </a>
                         <div className="text-black">
                             <div className="flex space-x-2 items-baseline">
@@ -84,7 +84,7 @@ const Experience = () => {
                             <p className="text-gray-500 text-sm">
                                 May 2022 - Aug 2023
                             </p>
-                            <div className="rounded-md bg-gray-200 p-2 mt-4 overflow-auto max-h-32">
+                            <div className="rounded-md bg-gray-300 p-2 mt-4 overflow-auto max-h-36 dark:bg-gray-200">
                                 <ul>
                                     <li>‣ Implemented VBA macro to reduce data entry time from 3-4 hours to under a minute (98% cut)</li>
                                     <li>‣ Assisted with telemetry system accuracy and provided support for online meeting software (Zoom, Teams, Webex).</li>
