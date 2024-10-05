@@ -1,4 +1,5 @@
 import Carousel from "../utils/carousel";
+import DessertOasisPreview  from "../assets/dessert_oasis_preview.MP4";
 
 const Projects = () => {
 
@@ -6,9 +7,7 @@ const Projects = () => {
         <Carousel>
             <div>OutWork</div>
             <div>
-                <video width="240" height="360">
-                    <source src="../assets/dessert_oasis_preview.MP4" type="video/mp4"/>
-                </video>
+                <video src={DessertOasisPreview} width="240" height="360" autoPlay={true} loop={true}/>
             </div>
         </Carousel>
     );
