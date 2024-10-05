@@ -191,6 +191,7 @@ const Home = () => {
             </div>
 
             <div className="fixed top-6 right-6 flex space-x-8">
+                <div className="fixed top-4 right-4 h-14 w-52 bg-gray-300 dark:bg-gray-600 p-4 rounded-full opacity-75 z-0"></div>
                 <a 
                     href="https://github.com/ColeWhaley1"
                     target="_blank" 
