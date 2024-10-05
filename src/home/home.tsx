@@ -11,6 +11,7 @@ import CheckLight from "../assets/check_light.png";
 import Experience from "../experience/experience";
 import Skill from "./skill";
 import LocationIcon from "../assets/location.svg";
+import Projects from "../projects/projects";
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -183,6 +184,10 @@ const Home = () => {
 
             <div className="mx-8 p-8 animate-fadeInLeft">
                 <Experience/>
+            </div>
+
+            <div className="mx-8 p-8 animate-fadeInLeft">
+                <Projects/>
             </div>
 
             <div className="fixed top-6 right-6 flex space-x-8">

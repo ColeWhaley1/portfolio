@@ -7,16 +7,20 @@ interface CarouselProps {
     startIndex?: number;
 }
 
+let carouselIdCounter: number = 0;
+
 const Carousel: React.FC<CarouselProps> = ({ children, startIndex = 0 }) => {
 
     const [currentIndex, setCurrentIndex] = useState(startIndex);
 
-    function removeArrow(id: 'left' | 'right') {
-        document.getElementById(`${id}-arrow`)?.classList.add("hidden");
+    const carouselId = carouselIdCounter++;
+
+    function removeArrow(direction: 'left' | 'right') {
+        document.getElementById(`${direction}-arrow-${carouselId}`)?.classList.add("hidden");
     }
 
-    function makeArrowVisible(id: 'left' | 'right') {
-        document.getElementById(`${id}-arrow`)?.classList.remove("hidden");
+    function makeArrowVisible(direction: 'left' | 'right') {
+        document.getElementById(`${direction}-arrow-${carouselId}`)?.classList.remove("hidden");
     }
 
     useEffect(() => {
@@ -72,14 +76,14 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex = 0 }) => {
                 </div>
             </div>
             <button
-                id="left-arrow"
+                id={`left-arrow-${carouselId}`}
                 onClick={() => updateCarousel('left')}
                 className="absolute top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full left-[-30px]"
             >
                 <img src={LeftArrow} alt="previous slide button" />
             </button>
             <button
-                id="right-arrow"
+                id={`right-arrow-${carouselId}`}
                 onClick={() => updateCarousel('right')}
                 className="absolute top-1/2 right-[-30px] transform -translate-y-1/2 bg-gray-400 p-2 rounded-full"
             >
