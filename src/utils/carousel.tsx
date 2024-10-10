@@ -62,6 +62,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex = 0, arrow_sid
                 <button
                     onClick={() => updateCarousel('left')}
                     className={`absolute top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full outline outline-gray-500 dark:outline-white left-${arrow_side_margin}`}
+                    style={{ left: `${arrow_side_margin}rem` }}
                 >
                     <img src={LeftArrow} alt="previous slide button" />
                 </button>
@@ -70,7 +71,8 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex = 0, arrow_sid
             {isRightArrowVisible && (
                 <button
                     onClick={() => updateCarousel('right')}
-                    className={`absolute top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full outline outline-gray-500 dark:outline-white right-${arrow_side_margin}`}
+                    className={`absolute top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full outline outline-gray-500 dark:outline-white`}
+                    style={{ right: `${arrow_side_margin}rem` }}
                 >
                     <img src={RightArrow} alt="next slide button" />
                 </button>
