@@ -46,7 +46,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, startIndex = 0, arrow_sid
     };
 
     return (
-        <div className="relative pl-4 overflow-hidden">
+        <div className="relative overflow-hidden">
             <div
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}

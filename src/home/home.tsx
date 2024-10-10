@@ -166,7 +166,7 @@ const Home = () => {
                         Full-stack Software Engineer
                     </h2>
                 </div>
-                <div>
+                <div className="flex space-x-2">
                     <Skill>
                         Typescript
                     </Skill>

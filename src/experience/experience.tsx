@@ -22,7 +22,7 @@ const Experience = () => {
                                     Full-Stack Developer
                                 </p>
                             </div>
-                            <div className="transform scale-75 origin-left">
+                            <div className="transform scale-75 origin-left flex space-x-2">
                                 <Skill>Typescript</Skill>
                                 <Skill>SQL</Skill>
                                 <Skill>React</Skill>
@@ -60,7 +60,7 @@ const Experience = () => {
                                     Computer Tech Assistant
                                 </p>
                             </div>
-                            <div className="transform scale-75 origin-left">
+                            <div className="transform scale-75 origin-left flex space-x-2">
                                 <Skill>VBA</Skill>
                                 <Skill>Data Analysis</Skill>
                                 <Skill>Excel</Skill>
