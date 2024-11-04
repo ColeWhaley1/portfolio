@@ -202,8 +202,8 @@ const Home = () => {
                     </div>
                 </a>
                 <a
-                    href="/portfolio/Resume-Cover-Letter.zip"
-                    download="Resume-Cover-Letter.zip"
+                    href="/portfolio/resume.pdf"
+                    download="resume.pdf"
                     className="text-gray-900 rounded-full dark:text-white hover:scale-105">
                     <div className="relative w-10 h-10">
                         {darkMode ? <img src={DownloadLightIcon} className="h-10 w-10"/> : <img src={DownloadDarkIcon} className="h-10 w-10"/>}

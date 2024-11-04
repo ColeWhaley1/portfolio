@@ -1,1 +1,1 @@
-{"root":["./src/main.tsx","./src/vite-env.d.ts","./src/experience/experience.tsx","./src/home/home.tsx","./src/home/skill.tsx","./src/utils/carousel.tsx"],"version":"5.6.2"}
+{"root":["./src/declarations.d.ts","./src/main.tsx","./src/vite-env.d.ts","./src/experience/experience.tsx","./src/home/home.tsx","./src/home/skill.tsx","./src/projects/projects.tsx","./src/utils/carousel.tsx"],"version":"5.6.2"}
