@@ -1,10 +1,20 @@
 import Carousel from "../utils/carousel";
 import DessertOasisPreview from "../assets/dessert_oasis_preview.MP4";
 import OutWorkPreview from "../assets/out_work_preview.MP4";
+import PortfolioCreatorPreview from "../assets/portfolio_creator_preview.mov";
 import AppPreviewBg from "../assets/app_preview_bg.avif?url";
 import Skill from "../home/skill";
+import { useRef, useEffect } from "react";
 
 const Projects = () => {
+    const investmentPortfolioRef = useRef<HTMLVideoElement | null>(null);
+
+    useEffect(() => {
+        if (investmentPortfolioRef.current) {
+            investmentPortfolioRef.current.playbackRate = 2; 
+        }
+    }, []);
+
     return (
         <Carousel arrow_side_margin={4}>
             {/* slide 1 OutWork */}
@@ -17,6 +27,7 @@ const Projects = () => {
                 <div className="relative z-10 flex w-full items-center justify-center">
                     <div className="m-6 md:m-12">
                         <video 
+                            ref = {investmentPortfolioRef}
                             src={OutWorkPreview} 
                             width="300" 
                             autoPlay 
@@ -53,12 +64,12 @@ const Projects = () => {
                 <div className="relative z-10 flex w-full items-center justify-center">
                     <div className="m-6 md:m-12">
                         <video 
-                            src={OutWorkPreview} 
+                            src={PortfolioCreatorPreview} 
                             width="300" 
                             autoPlay 
                             muted 
                             loop={true} 
-                            className="rounded-3xl outline outline-4 outline-black"
+                            className="rounded-lg w-full"
                         />
                     </div>
 
